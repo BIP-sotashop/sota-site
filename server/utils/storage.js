@@ -1,6 +1,5 @@
-const AWS = require('aws-sdk');
-
 const keys = require('../config/keys');
+var EasyYandexS3 = require("easy-yandex-s3");
 
 exports.s3Upload = async image => {
   try {
@@ -12,23 +11,24 @@ exports.s3Upload = async image => {
     }
 
     if (image) {
-      const s3bucket = new AWS.S3({
-        accessKeyId: keys.aws.accessKeyId,
-        secretAccessKey: keys.aws.secretAccessKey,
-        region: keys.aws.region
+      const s3bucket = new EasyYandexS3({
+        auth: {
+          accessKeyId: keys.aws.accessKeyId,
+          secretAccessKey: keys.aws.secretAccessKey,
+        },
+        Bucket: 'bip-bucket', 
+        debug: false,
       });
 
-      const params = {
-        Bucket: keys.aws.bucketName,
-        Key: image.originalname,
-        Body: image.buffer,
-        ContentType: image.mimetype
-      };
-
-      const s3Upload = await s3bucket.upload(params).promise();
-
-      imageUrl = s3Upload.Location;
-      imageKey = s3Upload.key;
+      const upload = await s3bucket.Upload(
+        {
+          buffer: image.buffer,
+        },
+        '/images/'
+      );
+      console.warn(upload); 
+      imageUrl = upload.Location;
+      imageKey = upload.key;
     }
 
     return { imageUrl, imageKey };
