@@ -134,11 +134,10 @@ export const addCategory = () => {
       };
 
       const { isValid, errors } = allFieldsValidation(newCategory, rules, {
-        'required.name': 'Name is required.',
-        'required.description': 'Description is required.',
-        'max.description':
-          'Description may not be greater than 200 characters.',
-        'required.products': 'Products are required.'
+        'required.name': 'Название обязательно.',
+        'required.description': 'Описание обязательно.',
+        'max.description': 'Описание не может быть больше 200 символов.',
+        'required.products': 'Товары обязательны.'
       });
 
       if (!isValid) {
@@ -189,14 +188,13 @@ export const updateCategory = () => {
       };
 
       const { isValid, errors } = allFieldsValidation(newCategory, rules, {
-        'required.name': 'Name is required.',
-        'required.slug': 'Slug is required.',
+        'required.name': 'Название обязательно.',
+        'required.slug': 'Артикул обязателен.',
         'alpha_dash.slug':
-          'Slug may have alpha-numeric characters, as well as dashes and underscores only.',
-        'required.description': 'Description is required.',
-        'max.description':
-          'Description may not be greater than 200 characters.',
-        'required.products': 'Products are required.'
+          'Артикул может содержать только буквенно-цифровые символы, дефисы и подчеркивания.',
+        'required.description': 'Описание обязательно.',
+        'max.description': 'Описание не может быть больше 200 символов.',
+        'required.products': 'Товары обязательны.'
       });
 
       if (!isValid) {

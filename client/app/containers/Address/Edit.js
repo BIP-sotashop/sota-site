@@ -40,8 +40,8 @@ class Edit extends React.PureComponent {
 
     return (
       <SubPage
-        title='Edit Address'
-        actionTitle='Cancel'
+        title='Редактировать адрес'
+        actionTitle='Отмена'
         handleAction={() => history.goBack()}
       >
         {address?._id ? (
@@ -54,7 +54,7 @@ class Edit extends React.PureComponent {
             defaultChange={defaultChange}
           />
         ) : (
-          <NotFound message='No address found.' />
+          <NotFound message='Адрес не найден.' />
         )}
       </SubPage>
     );

@@ -35,9 +35,9 @@ const AddCategory = props => {
             <Input
               type={'text'}
               error={formErrors['name']}
-              label={'Name'}
+              label={'Название'}
               name={'name'}
-              placeholder={'Category Name'}
+              placeholder={'Название категории'}
               value={categoryFormData.name}
               onInputChange={(name, value) => {
                 categoryChange(name, value);
@@ -48,9 +48,9 @@ const AddCategory = props => {
             <Input
               type={'textarea'}
               error={formErrors['description']}
-              label={'Description'}
+              label={'Описание'}
               name={'description'}
-              placeholder={'Category Description'}
+              placeholder={'Описание категории'}
               value={categoryFormData.description}
               onInputChange={(name, value) => {
                 categoryChange(name, value);
@@ -60,7 +60,7 @@ const AddCategory = props => {
           <Col xs='12' md='12'>
             <SelectOption
               error={formErrors['products']}
-              label={'Select Products'}
+              label={'Выбрать товары'}
               multi={true}
               value={categoryFormData.products}
               options={products}
@@ -73,7 +73,7 @@ const AddCategory = props => {
             <Switch
               id={'active-category'}
               name={'isActive'}
-              label={'Active?'}
+              label={'Активный?'}
               checked={categoryFormData.isActive}
               toggleCheckboxChange={value => categoryChange('isActive', value)}
             />
@@ -81,7 +81,7 @@ const AddCategory = props => {
         </Row>
         <hr />
         <div className='add-category-actions'>
-          <Button type='submit' text='Add Category' />
+          <Button type='submit' text='Добавить категорию' />
         </div>
       </form>
     </div>

@@ -1,5 +1,5 @@
 export const sortOptions = [
-  { value: 0, label: 'Newest First' },
-  { value: 1, label: 'Price High to Low' },
-  { value: 2, label: 'Price Low to High' }
+  { value: 0, label: 'Сначала новые' },
+  { value: 1, label: 'Цена от высокой к низкой' },
+  { value: 2, label: 'Цена от низкой к высокой' }
 ];

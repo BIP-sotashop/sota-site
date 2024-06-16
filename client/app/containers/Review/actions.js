@@ -158,11 +158,11 @@ export const addProductReview = () => {
       };
 
       const { isValid, errors } = allFieldsValidation(newReview, rules, {
-        'required.title': 'Title is required.',
-        'required.review': 'Review is required.',
-        'required.rating': 'Rating is required.',
-        'min.rating': 'Rating is required.',
-        'required.isRecommended': 'Recommendable is required.'
+        'required.title': 'Заголовок обязателен.',
+        'required.review': 'Отзыв обязателен.',
+        'required.rating': 'Рейтинг обязателен.',
+        'min.rating': 'Рейтинг обязателен.',
+        'required.isRecommended': 'Рекомендация обязательна.'
       });
 
       if (!isValid) {

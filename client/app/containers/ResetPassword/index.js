@@ -26,7 +26,7 @@ class ResetPassword extends React.PureComponent {
 
     return (
       <div className='reset-password-form'>
-        <h2>Reset Password</h2>
+        <h2>Сбросить пароль</h2>
         <hr />
         <ResetPasswordForm
           isToken

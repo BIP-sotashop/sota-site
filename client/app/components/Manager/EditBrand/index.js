@@ -44,9 +44,9 @@ const EditBrand = props => {
             <Input
               type={'text'}
               error={formErrors['name']}
-              label={'Name'}
+              label={'Название'}
               name={'name'}
-              placeholder={'Brand Name'}
+              placeholder={'Название бренда'}
               value={brand.name}
               onInputChange={(name, value) => {
                 brandChange(name, value);
@@ -57,9 +57,9 @@ const EditBrand = props => {
             <Input
               type={'text'}
               error={formErrors['slug']}
-              label={'Slug'}
+              label={'Идентификатор'}
               name={'slug'}
-              placeholder={'Brand Slug'}
+              placeholder={'Идентификатор бренда'}
               value={brand.slug}
               onInputChange={(name, value) => {
                 brandChange(name, value);
@@ -70,9 +70,9 @@ const EditBrand = props => {
             <Input
               type={'textarea'}
               error={formErrors['description']}
-              label={'Description'}
+              label={'Описание'}
               name={'description'}
-              placeholder={'Brand Description'}
+              placeholder={'Описание бренда'}
               value={brand.description}
               onInputChange={(name, value) => {
                 brandChange(name, value);
@@ -83,10 +83,10 @@ const EditBrand = props => {
             <Switch
               style={{ width: 100 }}
               tooltip={brand.isActive}
-              tooltipContent={`Disabling ${brand.name} will also disable all ${brand.name} products.`}
+              tooltipContent={`Отключение ${brand.name} также отключит все ${brand.name} товары.`}
               id={`enable-brand-${brand._id}`}
               name={'isActive'}
-              label={'Active?'}
+              label={'Активный?'}
               checked={brand.isActive}
               toggleCheckboxChange={value => activateBrand(brand._id, value)}
             />
@@ -96,12 +96,12 @@ const EditBrand = props => {
         <div className='d-flex flex-column flex-md-row'>
           <Button
             type='submit'
-            text='Save'
+            text='Сохранить'
             className='mb-3 mb-md-0 mr-0 mr-md-3'
           />
           <Button
             variant='danger'
-            text='Delete'
+            text='Удалить'
             disabled={user.role === ROLES.Merchant}
             onClick={() => deleteBrand(brand._id)}
           />

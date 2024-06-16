@@ -43,10 +43,10 @@ export const login = () => {
     const user = getState().login.loginFormData;
 
     const { isValid, errors } = allFieldsValidation(user, rules, {
-      'required.email': 'Email is required.',
-      'email.email': 'Email format is invalid.',
-      'required.password': 'Password is required.',
-      'min.password': 'Password must be at least 6 characters.'
+      'required.email': 'Email обязателен.',
+      'email.email': 'Email неверен.',
+      'required.password': 'Пароль обязателен.',
+      'min.password': 'Пароль должен быть более 6 символов.'
     });
 
     if (!isValid) {
@@ -62,7 +62,7 @@ export const login = () => {
       const firstName = response.data.user.firstName;
 
       const successfulOptions = {
-        title: `Hey${firstName ? ` ${firstName}` : ''}, Welcome Back!`,
+        title: `Привет${firstName ? ` ${firstName}` : ''}, добро пожаловать!`,
         position: 'tr',
         autoDismiss: 1
       };
@@ -76,7 +76,7 @@ export const login = () => {
 
       dispatch({ type: LOGIN_RESET });
     } catch (error) {
-      const title = `Please try to login again!`;
+      const title = `Пожалуйста, попробуйте войти снова!`;
       handleError(error, dispatch, title);
     } finally {
       dispatch({ type: SET_LOGIN_SUBMITTING, payload: false });
@@ -88,7 +88,7 @@ export const login = () => {
 export const signOut = () => {
   return (dispatch, getState) => {
     const successfulOptions = {
-      title: `You have signed out!`,
+      title: `Вы вышли из системы!`,
       position: 'tr',
       autoDismiss: 1
     };

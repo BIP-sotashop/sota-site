@@ -104,12 +104,13 @@ export const addAddress = () => {
       const isDefault = getState().address.isDefault;
 
       const { isValid, errors } = allFieldsValidation(newAddress, rules, {
-        'required.address': 'Address is required.',
-        'required.city': 'City is required.',
-        'required.state': 'State is required.',
-        'required.country': 'Country is required.',
-        'required.zipCode': 'Zipcode is required.'
+        'required.address': 'Адрес обязателен.',
+        'required.city': 'Город обязателен.',
+        'required.state': 'Штат обязателен.',
+        'required.country': 'Страна обязательна.',
+        'required.zipCode': 'Почтовый индекс обязателен.'
       });
+
 
       if (!isValid) {
         return dispatch({ type: SET_ADDRESS_FORM_ERRORS, payload: errors });
@@ -158,12 +159,13 @@ export const updateAddress = () => {
       const newAddress = getState().address.address;
 
       const { isValid, errors } = allFieldsValidation(newAddress, rules, {
-        'required.address': 'Address is required.',
-        'required.city': 'City is required.',
-        'required.state': 'State is required.',
-        'required.country': 'Country is required.',
-        'required.zipCode': 'Zipcode is required.'
+        'required.address': 'Адрес обязателен.',
+        'required.city': 'Город обязателен.',
+        'required.state': 'Штат обязателен.',
+        'required.country': 'Страна обязательна.',
+        'required.zipCode': 'Почтовый индекс обязателен.'
       });
+
 
       if (!isValid) {
         return dispatch({

@@ -39,13 +39,11 @@ export const resetPassword = token => {
       const user = getState().resetPassword.resetFormData;
 
       const { isValid, errors } = allFieldsValidation(user, rules, {
-        'required.password': 'Password is required.',
-        'min.password': 'Password must be at least 6 characters.',
-        'required.confirmPassword': 'Confirm password is required.',
-        'min.confirmPassword':
-          'Confirm password must be at least 6 characters.',
-        'same.confirmPassword':
-          'Confirm password and password fields must match.'
+        'required.password': 'Пароль обязателен.',
+        'min.password': 'Пароль должен быть не менее 6 символов.',
+        'required.confirmPassword': 'Подтверждение пароля обязательно.',
+        'min.confirmPassword': 'Подтверждение пароля должно быть не менее 6 символов.',
+        'same.confirmPassword': 'Подтверждение пароля и пароль должны совпадать.'
       });
 
       if (!isValid) {
@@ -69,7 +67,7 @@ export const resetPassword = token => {
       dispatch(success(successfulOptions));
       dispatch({ type: RESET_PASSWORD_RESET });
     } catch (error) {
-      const title = `Please try to reset again!`;
+      const title = `Пожалуйста, попробуйте снова сбросить пароль!`;
       handleError(error, dispatch, title);
     }
   };
@@ -86,10 +84,10 @@ export const resetAccountPassword = () => {
       const user = getState().resetPassword.resetFormData;
 
       const { isValid, errors } = allFieldsValidation(user, rules, {
-        'required.password': 'Password is required.',
-        'min.password': 'Password must be at least 6 characters.',
-        'required.confirmPassword': 'Confirm password is required.',
-        'min.confirmPassword': 'Confirm password must be at least 6 characters.'
+        'required.password': 'Пароль обязателен.',
+        'min.password': 'Пароль должен быть не менее 6 символов.',
+        'required.confirmPassword': 'Подтверждение пароля обязательно.',
+        'min.confirmPassword': 'Подтверждение пароля должно быть не менее 6 символов.'
       });
 
       if (!isValid) {
@@ -113,7 +111,7 @@ export const resetAccountPassword = () => {
       dispatch(success(successfulOptions));
       dispatch({ type: RESET_PASSWORD_RESET });
     } catch (error) {
-      const title = `Please try to reset again!`;
+      const title = `Пожалуйста, попробуйте снова сбросить пароль!`;
       handleError(error, dispatch, title);
     }
   };

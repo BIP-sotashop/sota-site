@@ -24,14 +24,14 @@ const MerchantList = props => {
     <div className='p-2'>
       <p className='text-gray text-14'>
         {merchant.isActive
-          ? "Disabling merchant account will disable merchant's brand and account access."
-          : 'Enabling merchant account will restore merchant account access.'}
+          ? "Отключение аккаунта продавца отключит бренд продавца и доступ к аккаунту."
+          : 'Включение аккаунта продавца восстановит доступ к аккаунту продавца.'}
       </p>
       <Button
         variant='dark'
         size='sm'
         className='w-100'
-        text={merchant.isActive ? 'Disable Merchant' : 'Enable Merchant'}
+        text={merchant.isActive ? 'Отключить продавца' : 'Включить продавца'}
         onClick={() => disableMerchant(merchant, !merchant.isActive)}
       />
     </div>
@@ -42,19 +42,19 @@ const MerchantList = props => {
       {merchants.map((merchant, index) => (
         <div key={index} className='merchant-box'>
           <div className='mb-3 p-4'>
-            <label className='text-black'>Business</label>
+            <label className='text-black'>Бизнес</label>
             <p className='fw-medium text-truncate'>{merchant.business}</p>
-            <label className='text-black'>Brand</label>
+            <label className='text-black'>Бренд</label>
             <p className='text-truncate'>{merchant.brandName}</p>
-            <label className='text-black'>Name</label>
+            <label className='text-black'>Имя</label>
             <p className='text-truncate'>{merchant.name}</p>
-            <label className='text-black'>Email</label>
+            <label className='text-black'>Электронная почта</label>
             <p className='text-truncate'>
-              {merchant.email ? merchant.email : 'N/A'}
+              {merchant.email ? merchant.email : 'Н/Д'}
             </p>
-            <label className='text-black'>Phone Number</label>
+            <label className='text-black'>Номер телефона</label>
             <p>{merchant.phoneNumber}</p>
-            <label className='text-black'>Request date</label>
+            <label className='text-black'>Дата запроса</label>
             <p>{formatDate(merchant.created)}</p>
 
             <hr />
@@ -64,7 +64,7 @@ const MerchantList = props => {
                 <div className='d-flex flex-row justify-content-between align-items-center mx-0'>
                   <div className='d-flex flex-row mx-0'>
                     <CheckIcon className='text-green' />
-                    <p className='ml-2 mb-0'>Approved</p>
+                    <p className='ml-2 mb-0'>Одобрено</p>
                   </div>
 
                   <div className='d-flex flex-row align-items-center mx-0'>
@@ -74,7 +74,7 @@ const MerchantList = props => {
                       round={20}
                       icon={<TrashIcon width={20} />}
                       tooltip={true}
-                      tooltipContent='Delete'
+                      tooltipContent='Удалить'
                       id={`delete-${merchant._id}`}
                       onClick={() => deleteMerchant(merchant)}
                     />
@@ -84,12 +84,12 @@ const MerchantList = props => {
                   className='w-100 mt-3'
                   size='sm'
                   text={
-                    merchant.isActive ? 'Disable Merchant' : 'Enable Merchant'
+                    merchant.isActive ? 'Отключить продавца' : 'Включить продавца'
                   }
                   popover={true}
-                  popoverTitle={`Are you sure you want to ${
-                    merchant.isActive ? 'disable' : 'enable'
-                  } ${merchant.name}'s merchant account?`}
+                  popoverTitle={`Вы уверены, что хотите ${
+                    merchant.isActive ? 'отключить' : 'включить'
+                  } аккаунт продавца ${merchant.name}?`}
                   popoverContent={renderMerchantPopover(merchant)}
                 />
               </>
@@ -101,7 +101,7 @@ const MerchantList = props => {
                     round={20}
                     icon={<RefreshIcon width={18} className='text-primary' />}
                     tooltip={true}
-                    tooltipContent='Re-Approve'
+                    tooltipContent='Переодобрить'
                     id={`re-approve-${merchant._id}`}
                     onClick={() => approveMerchant(merchant)}
                   />
@@ -112,7 +112,7 @@ const MerchantList = props => {
                       round={20}
                       icon={<TrashIcon width={20} />}
                       tooltip={true}
-                      tooltipContent='Delete'
+                      tooltipContent='Удалить'
                       id={`delete-${merchant._id}`}
                       onClick={() => deleteMerchant(merchant)}
                     />
@@ -127,7 +127,7 @@ const MerchantList = props => {
                     round={20}
                     icon={<CheckIcon width={18} className='text-green' />}
                     tooltip={true}
-                    tooltipContent='Approve'
+                    tooltipContent='Одобрить'
                     id={`approve-${merchant._id}`}
                     onClick={() => approveMerchant(merchant)}
                   />
@@ -137,7 +137,7 @@ const MerchantList = props => {
                     round={20}
                     icon={<XIcon width={20} />}
                     tooltip={true}
-                    tooltipContent='Reject'
+                    tooltipContent='Отклонить'
                     id={`reject-${merchant._id}`}
                     onClick={() => rejectMerchant(merchant)}
                   />
@@ -149,7 +149,7 @@ const MerchantList = props => {
                     round={20}
                     icon={<TrashIcon width={20} />}
                     tooltip={true}
-                    tooltipContent='Delete'
+                    tooltipContent='Удалить'
                     id={`delete-${merchant._id}`}
                     onClick={() => deleteMerchant(merchant)}
                   />
@@ -158,7 +158,7 @@ const MerchantList = props => {
             ) : (
               <>
                 <p className='text-truncate'>
-                  Merchant doesn't have email. Call at
+                  У продавца нет электронной почты. Позвоните по номеру
                   <a
                     href={`tel:${merchant.phoneNumber}`}
                     className='text-primary'
@@ -172,7 +172,7 @@ const MerchantList = props => {
                   round={20}
                   icon={<TrashIcon width={20} />}
                   tooltip={true}
-                  tooltipContent='Delete'
+                  tooltipContent='Удалить'
                   id={`delete-${merchant._id}`}
                   onClick={() => deleteMerchant(merchant)}
                 />

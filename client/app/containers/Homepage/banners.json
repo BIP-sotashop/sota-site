@@ -1,12 +1,18 @@
 [
   {
-    "imageUrl": "/images/banners/banner-3.jpg",
+    "imageUrl": "/images/banners/new1.png",
     "link": "",
     "title": "",
     "content": "<p></p>\n"
   },
   {
-    "imageUrl": "/images/banners/banner-4.jpg",
+    "imageUrl": "/images/banners/new3.png",
+    "link": "",
+    "title": "",
+    "content": "<p></p>\n"
+  },
+  {
+    "imageUrl": "/images/banners/new2.png",
     "link": "",
     "title": "",
     "content": "<p></p>\n"

@@ -56,7 +56,7 @@ const dropdownStyles = {
     return {
       ...styles,
       color: '#323232',
-      fontFamily: 'Poppins',
+      fontFamily: 'Montserrat',
       backgroundColor: 'white',
       transition: '0.3s',
       boxShadow: 'none',

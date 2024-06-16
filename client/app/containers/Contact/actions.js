@@ -38,11 +38,11 @@ export const contactUs = () => {
       const contact = getState().contact.contactFormData;
 
       const { isValid, errors } = allFieldsValidation(contact, rules, {
-        'required.name': 'Name is required.',
-        'required.email': 'Email is required.',
-        'email.email': 'Email format is invalid.',
-        'required.message': 'Message is required.',
-        'min.message': 'Message must be at least 10 characters.'
+        'required.name': 'Имя обязательно.',
+        'required.email': 'Email обязателен.',
+        'email.email': 'Формат Email неверен.',
+        'required.message': 'Сообщение обязательно.',
+        'min.message': 'Сообщение должно быть более 10 символов.'
       });
 
       if (!isValid) {

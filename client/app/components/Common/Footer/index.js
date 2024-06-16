@@ -13,9 +13,9 @@ import Newsletter from '../../../containers/Newsletter';
 
 const Footer = () => {
   const infoLinks = [
-    { id: 0, name: 'Contact Us', to: '/contact' },
-    { id: 1, name: 'Sell With Us', to: '/sell' },
-    { id: 2, name: 'Shipping', to: '/shipping' }
+    { id: 0, name: 'Связаться с нами', to: '/contact' },
+    { id: 1, name: 'Для поставщиков', to: '/sell' },
+    { id: 2, name: 'Отслеживание товара', to: '/shipping' }
   ];
 
   const footerBusinessLinks = (
@@ -43,7 +43,7 @@ const Footer = () => {
         <div className='footer-content'>
           <div className='footer-block'>
             <div className='block-title'>
-              <h3 className='text-uppercase'>Customer Service</h3>
+              <h3 className='text-uppercase'>Поддержка пользователей</h3>
             </div>
             <div className='block-content'>
               <ul>{footerLinks}</ul>
@@ -51,7 +51,7 @@ const Footer = () => {
           </div>
           <div className='footer-block'>
             <div className='block-title'>
-              <h3 className='text-uppercase'>Links</h3>
+              <h3 className='text-uppercase'>Ссылки</h3>
             </div>
             <div className='block-content'>
               <ul>{footerLinks}</ul>
@@ -59,35 +59,26 @@ const Footer = () => {
           </div>
           <div className='footer-block'>
             <div className='block-title'>
-              <h3 className='text-uppercase'>Newsletter</h3>
+              <h3 className='text-uppercase'>Подписка</h3>
               <Newsletter />
             </div>
           </div>
         </div>
         <div className='footer-copyright'>
-          <span>© {new Date().getFullYear()} MERN Store</span>
+          <span>© {new Date().getFullYear()} SOTASHOP</span>
         </div>
         <ul className='footer-social-item'>
           <li>
-            <a href='/#facebook' rel='noreferrer noopener' target='_blank'>
+            <a href='https://vk.com/sotashop_ru' rel='noreferrer noopener' target='_blank'>
               <span className='facebook-icon' />
             </a>
           </li>
           <li>
-            <a href='/#instagram' rel='noreferrer noopener' target='_blank'>
+            <a href='https://www.instagram.com/sotashop.ru/' rel='noreferrer noopener' target='_blank'>
               <span className='instagram-icon' />
             </a>
           </li>
-          <li>
-            <a href='/#pinterest' rel='noreferrer noopener' target='_blank'>
-              <span className='pinterest-icon' />
-            </a>
-          </li>
-          <li>
-            <a href='/#twitter' rel='noreferrer noopener' target='_blank'>
-              <span className='twitter-icon' />
-            </a>
-          </li>
+
         </ul>
       </Container>
     </footer>

@@ -27,8 +27,8 @@ class List extends React.PureComponent {
     return (
       <>
         <SubPage
-          title={user.role === ROLES.Admin ? 'Brands' : 'Brand'}
-          actionTitle={user.role === ROLES.Admin && 'Add'}
+          title={user.role === ROLES.Admin ? 'Бренды' : 'Бренд'}
+          actionTitle={user.role === ROLES.Admin && 'Добавить'}
           handleAction={() => history.push('/dashboard/brand/add')}
         >
           {isLoading ? (
@@ -36,7 +36,7 @@ class List extends React.PureComponent {
           ) : brands.length > 0 ? (
             <BrandList brands={brands} user={user} />
           ) : (
-            <NotFound message='No brands found.' />
+            <NotFound message='Бренды не найдены.' />
           )}
         </SubPage>
       </>

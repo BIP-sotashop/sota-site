@@ -13,8 +13,8 @@ const OrderSearch = props => {
     <div className='mb-3'>
       <SearchBar
         name='order'
-        placeholder='Type the complete order ID'
-        btnText='Search'
+        placeholder='Введите полный ID заказа'
+        btnText='Поиск'
         onSearch={props.onSearch}
         onBlur={props.onBlur}
         onSearchSubmit={props.onSearchSubmit}

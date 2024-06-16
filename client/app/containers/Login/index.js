@@ -43,7 +43,7 @@ class Login extends React.PureComponent {
     return (
       <div className='login-form'>
         {isLoading && <LoadingIndicator />}
-        <h2>Login</h2>
+        <h2>Вход</h2>
         <hr />
         <form onSubmit={handleSubmit} noValidate>
           <Row>
@@ -56,9 +56,9 @@ class Login extends React.PureComponent {
                 <Input
                   type={'text'}
                   error={formErrors['email']}
-                  label={'Email Address'}
+                  label={'Email'}
                   name={'email'}
-                  placeholder={'Please Enter Your Email'}
+                  placeholder={'Введите свой Email'}
                   value={loginFormData.email}
                   onInputChange={(name, value) => {
                     loginChange(name, value);
@@ -69,9 +69,9 @@ class Login extends React.PureComponent {
                 <Input
                   type={'password'}
                   error={formErrors['password']}
-                  label={'Password'}
+                  label={'Пароль'}
                   name={'password'}
-                  placeholder={'Please Enter Your Password'}
+                  placeholder={'Введите свой пароль'}
                   value={loginFormData.password}
                   onInputChange={(name, value) => {
                     loginChange(name, value);
@@ -93,11 +93,11 @@ class Login extends React.PureComponent {
               <Button
                 type='submit'
                 variant='primary'
-                text='Login'
+                text='Войти'
                 disabled={isSubmitting}
               />
               <Button
-                text='Create an account'
+                text='Создать аккаунт'
                 variant='link'
                 className='ml-md-3'
                 onClick={registerLink}
@@ -107,7 +107,7 @@ class Login extends React.PureComponent {
               className='redirect-link forgot-password-link'
               to={'/forgot-password'}
             >
-              Forgot Password?
+              Забыли пароль?
             </Link>
           </div>
         </form>

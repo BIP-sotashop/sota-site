@@ -31,7 +31,7 @@ const CartIcon = props => {
       variant='empty'
       className={className}
       ariaLabel={
-        items > 0 ? `your cart have ${items} items` : 'your cart is empty'
+        items > 0 ? `В корзине ${items} вещей` : 'Корзина пуста'
       }
       icon={Icon}
       onClick={onClick}

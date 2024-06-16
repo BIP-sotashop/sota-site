@@ -44,8 +44,8 @@ class Edit extends React.PureComponent {
 
     return (
       <SubPage
-        title='Edit Category'
-        actionTitle='Cancel'
+        title='Редактировать категорию'
+        actionTitle='Отмена'
         handleAction={history.goBack}
       >
         {category?._id ? (
@@ -59,7 +59,7 @@ class Edit extends React.PureComponent {
             activateCategory={activateCategory}
           />
         ) : (
-          <NotFound message='No category found.' />
+          <NotFound message='Категория не найдена.' />
         )}
       </SubPage>
     );

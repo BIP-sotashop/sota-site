@@ -25,14 +25,14 @@ class Newsletter extends React.PureComponent {
 
     return (
       <div className='newsletter-form'>
-        <p>Sign Up for Our Newsletter</p>
+        <p>Подпишитесь на нашу новостную рассылку</p>
         <form onSubmit={handleSubmit}>
           <div className='subscribe'>
             <Input
               type={'text'}
               error={formErrors['email']}
               name={'email'}
-              placeholder={'Please Enter Your Email'}
+              placeholder={'Введите свой Email'}
               value={email}
               onInputChange={(name, value) => {
                 newsletterChange(name, value);
@@ -47,7 +47,7 @@ class Newsletter extends React.PureComponent {
 }
 
 const SubscribeButton = (
-  <Button type='submit' variant='primary' text='Subscribe' />
+  <Button type='submit' variant='primary' text='Подписаться' />
 );
 
 const mapStateToProps = state => {

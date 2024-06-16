@@ -79,7 +79,7 @@ const ReviewList = props => {
                     {review?.product.name}
                   </Link>
                 ) : (
-                  <p>Product is not available.</p>
+                  <p>Продукт недоступен.</p>
                 )}
                 <ReactStars
                   classNames='mt-1 mt-lg-2'
@@ -97,7 +97,7 @@ const ReviewList = props => {
               </div>
               {getProduct(review)}
             </div>
-            <label className='text-black'>{`Review Added on ${formatDate(
+            <label className='text-black'>{`Отзыв добавлен ${formatDate(
               review.created
             )}`}</label>
             <hr />
@@ -105,11 +105,11 @@ const ReviewList = props => {
               <div className='d-flex flex-column flex-lg-row justify-content-between align-items-lg-center mx-0'>
                 <div className='d-flex flex-row mx-0'>
                   <CheckIcon className='text-green' />
-                  <p className='ml-2 mb-0'>Approved</p>
+                  <p className='ml-2 mb-0'>Одобрен</p>
                 </div>
                 <Button
                   className='mt-3 mt-lg-0'
-                  text='Delete'
+                  text='Удалить'
                   icon={<TrashIcon width={15} />}
                   onClick={() => deleteReview(review._id)}
                 />
@@ -118,19 +118,19 @@ const ReviewList = props => {
               <>
                 <div className='d-flex align-items-center mb-3'>
                   <RefreshIcon className='text-primary' />
-                  <p className='fw-medium ml-3 mb-0'>Re Approve Review</p>
+                  <p className='fw-medium ml-3 mb-0'>Переодобрить отзыв</p>
                 </div>
                 <div className='d-flex flex-column flex-lg-row justify-content-between align-items-lg-center mx-0'>
                   <Button
                     className='text-uppercase'
                     variant='primary'
                     size='md'
-                    text='Approve'
+                    text='Одобрить'
                     onClick={() => approveReview(review)}
                   />
                   <Button
                     className='mt-3 mt-lg-0'
-                    text='Delete'
+                    text='Удалить'
                     icon={<TrashIcon width={15} />}
                     onClick={() => deleteReview(review._id)}
                   />
@@ -143,20 +143,20 @@ const ReviewList = props => {
                     variant='dark'
                     className='text-uppercase'
                     size='md'
-                    text='Approve'
+                    text='Одобрить'
                     onClick={() => approveReview(review)}
                   />
                   <Button
                     variant='danger'
                     className='mt-3 mt-lg-0 ml-lg-2 text-uppercase'
                     size='md'
-                    text='Reject'
+                    text='Отклонить'
                     onClick={() => rejectReview(review)}
                   />
                 </div>
                 <Button
                   className='mt-3 mt-lg-0'
-                  text='Delete'
+                  text='Удалить'
                   icon={<TrashIcon width={15} />}
                   onClick={() => deleteReview(review._id)}
                 />

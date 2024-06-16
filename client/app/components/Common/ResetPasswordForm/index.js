@@ -33,9 +33,9 @@ const ResetPasswordForm = props => {
             <Input
               type={'password'}
               error={formErrors['password']}
-              label={'Password'}
+              label={'Пароль'}
               name={'password'}
-              placeholder={isToken ? 'Password' : 'Old Password'}
+              placeholder={isToken ? 'Пароль' : 'Старый пароль'}
               value={resetFormData.password}
               onInputChange={(name, value) => {
                 resetPasswordChange(name, value);
@@ -46,9 +46,9 @@ const ResetPasswordForm = props => {
             <Input
               type={'password'}
               error={formErrors['confirmPassword']}
-              label={'Confirm Password'}
+              label={'Подтвердить пароль'}
               name={'confirmPassword'}
-              placeholder={'Confirm Password'}
+              placeholder={'Подтвердить пароль'}
               value={resetFormData.confirmPassword}
               onInputChange={(name, value) => {
                 resetPasswordChange(name, value);
@@ -58,7 +58,7 @@ const ResetPasswordForm = props => {
         </Row>
         <hr />
         <div className='reset-actions'>
-          <Button type='submit' text='Reset Password' />
+          <Button type='submit' text='Сбросить пароль' />
         </div>
       </form>
     </div>

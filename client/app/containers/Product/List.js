@@ -26,8 +26,8 @@ class List extends React.PureComponent {
     return (
       <>
         <SubPage
-          title='Products'
-          actionTitle='Add'
+          title='Продукты'
+          actionTitle='Добавить'
           handleAction={() => history.push('/dashboard/product/add')}
         >
           {isLoading ? (
@@ -35,7 +35,7 @@ class List extends React.PureComponent {
           ) : products.length > 0 ? (
             <ProductList products={products} />
           ) : (
-            <NotFound message='No products found.' />
+            <NotFound message='Продукты не найдены.' />
           )}
         </SubPage>
       </>

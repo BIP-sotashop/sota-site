@@ -52,10 +52,10 @@ export const signUp = () => {
       const isSubscribed = getState().signup.isSubscribed;
 
       const { isValid, errors } = allFieldsValidation(newUser, rules, {
-        'required.email': 'Email is required.',
-        'required.password': 'Password is required.',
-        'required.firstName': 'First Name is required.',
-        'required.lastName': 'Last Name is required.'
+        'required.email': 'Email обязателен.',
+        'required.password': 'Пароль обязателен.',
+        'required.firstName': 'Имя обязательно.',
+        'required.lastName': 'Фамилия обязательна.'
       });
 
       if (!isValid) {
@@ -73,7 +73,7 @@ export const signUp = () => {
       const response = await axios.post(`${API_URL}/auth/register`, user);
 
       const successfulOptions = {
-        title: `You have signed up successfully! You will be receiving an email as well. Thank you!`,
+        title: `Вы успешно зарегистрировались! Вы также получите письмо на ваш email. Спасибо!`,
         position: 'tr',
         autoDismiss: 1
       };
@@ -86,7 +86,7 @@ export const signUp = () => {
       dispatch(success(successfulOptions));
       dispatch({ type: SIGNUP_RESET });
     } catch (error) {
-      const title = `Please try to signup again!`;
+      const title = `Пожалуйста, попробуйте зарегистрироваться снова!`;
       handleError(error, dispatch, title);
     } finally {
       dispatch({ type: SET_SIGNUP_SUBMITTING, payload: false });

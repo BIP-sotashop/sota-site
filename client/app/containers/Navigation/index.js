@@ -31,7 +31,7 @@ import actions from '../../actions';
 import Button from '../../components/Common/Button';
 import CartIcon from '../../components/Common/CartIcon';
 import { BarsIcon } from '../../components/Common/Icon';
-import MiniBrand from '../../components/Store//MiniBrand';
+import MiniBrand from '../../components/Store/MiniBrand';
 import Menu from '../NavigationMenu';
 import Cart from '../Cart';
 
@@ -81,11 +81,10 @@ class Navigation extends React.PureComponent {
         <div className='d-flex'>
           <img
             className='item-image'
-            src={`${
-              suggestion.imageUrl
-                ? suggestion.imageUrl
-                : '/images/placeholder-image.png'
-            }`}
+            src={`${suggestion.imageUrl
+              ? suggestion.imageUrl
+              : '/images/placeholder-image.png'
+              }`}
           />
           <div>
             <Container>
@@ -128,7 +127,7 @@ class Navigation extends React.PureComponent {
     } = this.props;
 
     const inputProps = {
-      placeholder: 'Search Products',
+      placeholder: 'Поиск по товарам',
       value: searchValue,
       onChange: (_, { newValue }) => {
         onSearch(newValue);
@@ -142,19 +141,19 @@ class Navigation extends React.PureComponent {
             <Row>
               <Col md='4' className='text-center d-none d-md-block'>
                 <i className='fa fa-truck' />
-                <span>Free Shipping</span>
+                <span>Бесплатная доставка</span>
               </Col>
               <Col md='4' className='text-center d-none d-md-block'>
                 <i className='fa fa-credit-card' />
-                <span>Payment Methods</span>
+                <span>Любые способы оплаты</span>
               </Col>
               <Col md='4' className='text-center d-none d-md-block'>
                 <i className='fa fa-phone' />
-                <span>Call us 951-999-9999</span>
+                <span>Телефон поддержки: 7 981 952 12 32</span>
               </Col>
               <Col xs='12' className='text-center d-block d-md-none'>
                 <i className='fa fa-phone' />
-                <span> Need advice? Call us 951-999-9999</span>
+                <span> Нужна помощь? Позвоните 7 981 952 12 32</span>
               </Col>
             </Row>
           </Container>
@@ -174,13 +173,15 @@ class Navigation extends React.PureComponent {
                     borderless
                     variant='empty'
                     className='d-none d-md-block'
-                    ariaLabel='open the menu'
+                    ariaLabel='открыть меню'
                     icon={<BarsIcon />}
                     onClick={() => this.toggleMenu()}
                   />
                 )}
                 <Link to='/'>
-                  <h1 className='logo'>MERN Store</h1>
+                  <div className='logo-container'>
+                    <h1 className='logo'>SOTASHOP</h1>
+                  </div>
                 </Link>
               </div>
             </Col>
@@ -214,7 +215,7 @@ class Navigation extends React.PureComponent {
                 <Button
                   borderless
                   variant='empty'
-                  ariaLabel='open the menu'
+                  ariaLabel='открыть меню'
                   icon={<BarsIcon />}
                   onClick={() => this.toggleMenu()}
                 />
@@ -226,7 +227,7 @@ class Navigation extends React.PureComponent {
               sm={{ size: 12, order: 2 }}
               md={{ size: 9, order: 1 }}
               lg={{ size: 4, order: 3 }}
-              // className='px-0'
+            // className='px-0'
             >
               <Navbar color='light' light expand='md' className='mt-1 mt-md-0'>
                 <CartIcon
@@ -243,7 +244,7 @@ class Navigation extends React.PureComponent {
                       isOpen={isBrandOpen}
                     >
                       <DropdownToggle nav>
-                        Brands
+                        Бренды
                         <span className='fa fa-chevron-down dropdown-caret'></span>
                       </DropdownToggle>
                       <DropdownMenu right className='nav-brand-dropdown'>
@@ -262,36 +263,36 @@ class Navigation extends React.PureComponent {
                       to='/shop'
                       activeClassName='active'
                     >
-                      Shop
+                      Товары
                     </NavLink>
                   </NavItem>
                   {authenticated ? (
                     <UncontrolledDropdown nav inNavbar>
                       <DropdownToggle nav>
-                        {user.firstName ? user.firstName : 'Welcome'}
+                        {user.firstName ? user.firstName : 'Добро пожаловать!'}
                         <span className='fa fa-chevron-down dropdown-caret'></span>
                       </DropdownToggle>
                       <DropdownMenu right>
                         <DropdownItem
                           onClick={() => history.push('/dashboard')}
                         >
-                          Dashboard
+                          Панель управления
                         </DropdownItem>
-                        <DropdownItem onClick={signOut}>Sign Out</DropdownItem>
+                        <DropdownItem onClick={signOut}>Выйти</DropdownItem>
                       </DropdownMenu>
                     </UncontrolledDropdown>
                   ) : (
                     <UncontrolledDropdown nav inNavbar>
                       <DropdownToggle nav>
-                        Welcome!
+                        Добро пожаловать!
                         <span className='fa fa-chevron-down dropdown-caret'></span>
                       </DropdownToggle>
                       <DropdownMenu right>
                         <DropdownItem onClick={() => history.push('/login')}>
-                          Login
+                          Войти
                         </DropdownItem>
                         <DropdownItem onClick={() => history.push('/register')}>
-                          Sign Up
+                          Зарегистрироваться
                         </DropdownItem>
                       </DropdownMenu>
                     </UncontrolledDropdown>
@@ -302,7 +303,7 @@ class Navigation extends React.PureComponent {
           </Row>
         </Container>
 
-        {/* hidden cart drawer */}
+        {/* скрытая корзина */}
         <div
           className={isCartOpen ? 'mini-cart-open' : 'hidden-mini-cart'}
           aria-hidden={`${isCartOpen ? false : true}`}
@@ -318,7 +319,7 @@ class Navigation extends React.PureComponent {
           />
         </div>
 
-        {/* hidden menu drawer */}
+        {/* скрытое меню */}
         <div
           className={isMenuOpen ? 'mini-menu-open' : 'hidden-mini-menu'}
           aria-hidden={`${isMenuOpen ? false : true}`}

@@ -6,7 +6,7 @@
 
 import React from 'react';
 
-import { GoogleIcon, FacebookIcon } from '../Icon';
+import { GoogleIcon, FacebookIcon, VkIcon } from '../Icon';
 import { API_URL } from '../../../constants';
 
 const SignupProvider = () => {
@@ -14,12 +14,12 @@ const SignupProvider = () => {
     <div className='signup-provider'>
       <a href={`${API_URL}/auth/google`} className='mb-2 google-btn'>
         <GoogleIcon />
-        <span className='btn-text'>Login with Google</span>
+        <span className='btn-text'>Зайти через Google</span>
       </a>
 
-      <a href={`${API_URL}/auth/facebook`} className='facebook-btn'>
-        <FacebookIcon />
-        <span className='btn-text'>Login with Facebook</span>
+      <a href={`${API_URL}/auth/vk`} className='facebook-btn'>
+        <VkIcon />
+        <span className='btn-text'>Зайти через ВКонтакте</span>
       </a>
     </div>
   );

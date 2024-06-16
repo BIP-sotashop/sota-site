@@ -25,14 +25,14 @@ class List extends React.PureComponent {
     return (
       <>
         <SubPage
-          title='Addresses'
-          actionTitle={'Add'}
+          title='Адреса'
+          actionTitle={'Добавить'}
           handleAction={() => history.push('/dashboard/address/add')}
         >
           {addresses.length > 0 ? (
             <AddressList addresses={addresses} />
           ) : (
-            <NotFound message='No addresses found.' />
+            <NotFound message='Адреса не найдены.' />
           )}
         </SubPage>
       </>

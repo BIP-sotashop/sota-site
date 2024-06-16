@@ -27,13 +27,13 @@ class Wishlist extends React.PureComponent {
 
     return (
       <div className='wishlist-dashboard'>
-        <SubPage title={'Your Wishlist'} isMenuOpen={null}>
+        <SubPage title={'Ваш список желаемого'} isMenuOpen={null}>
           {isLoading && <LoadingIndicator />}
           {displayWishlist && (
             <WishList wishlist={wishlist} updateWishlist={updateWishlist} />
           )}
           {!isLoading && !displayWishlist && (
-            <NotFound message='You have no items in your wishlist yet.' />
+            <NotFound message='В вашем списке желаемого пока нет товаров.' />
           )}
         </SubPage>
       </div>

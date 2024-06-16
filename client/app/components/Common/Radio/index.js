@@ -33,11 +33,11 @@ class Radio extends React.Component {
               <input
                 name="sorting"
                 type="radio"
-                value="Newest First"
-                checked={this.state.size === "Newest First"}
+                value="Сначала новые"
+                checked={this.state.size === "Сначала новые"}
                 onChange={this.handleChange}
               />
-              Newest First
+              Сначала новые
             </label>
           </li>
 
@@ -46,11 +46,11 @@ class Radio extends React.Component {
               <input
                 name="sorting"
                 type="radio"
-                value="Price High to Low"
-                checked={this.state.size === "Price High to Low"}
+                value="Цена от высокой к низкой"
+                checked={this.state.size === "Цена от высокой к низкой"}
                 onChange={this.handleChange}
               />
-              Price High to Low
+              Цена от высокой к низкой
             </label>
           </li>
 
@@ -59,11 +59,11 @@ class Radio extends React.Component {
               <input
                 name="sorting"
                 type="radio"
-                value="Price Low to High"
-                checked={this.state.size === "Price Low to High"}
+                value="Цена от низкой к высокой"
+                checked={this.state.size === "Цена от низкой к высокой"}
                 onChange={this.handleChange}
               />
-              Price Low to High
+              Цена от низкой к высокой
             </label>
           </li>
         </ul>

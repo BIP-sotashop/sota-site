@@ -25,7 +25,7 @@ const Summary = props => {
 
   return (
     <div className='bg-white p-4 box-shadow-primary review-summary'>
-      <h2 className='mb-0'>Rating</h2>
+      <h2 className='mb-0'>Рейтинг</h2>
       {averageRating && (
         <div className='d-flex flex-wrap align-items-center mt-2'>
           <ReactStars
@@ -41,7 +41,7 @@ const Summary = props => {
             filledIcon={<i className='fa fa-star' />}
             value={averageRating}
           />
-          {totalReviews > 0 && <span>based on {totalReviews} reviews.</span>}
+          {totalReviews > 0 && <span>на основе {totalReviews} отзывов.</span>}
         </div>
       )}
 
@@ -50,7 +50,7 @@ const Summary = props => {
         ratingSummary.map((r, obj) => (
           <div key={obj} className='d-flex align-items-center mb-2'>
             <div className='left'>
-              <span>{parseInt(Object.keys(r)[0])} star</span>
+              <span>{parseInt(Object.keys(r)[0])} звезда</span>
             </div>
             <div className='middle'>
               <div className='bar-container'>
@@ -74,7 +74,7 @@ const Summary = props => {
       ) : (
         <NotFound>
           <ReviewIcon width='40' height='40' className='my-2' />
-          <p className='mb-2'>Be the first to add a review.</p>
+          <p className='mb-2'>Будьте первым, кто добавит отзыв.</p>
         </NotFound>
       )}
     </div>

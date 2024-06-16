@@ -250,18 +250,18 @@ export const addProduct = () => {
       };
 
       const { isValid, errors } = allFieldsValidation(newProduct, rules, {
-        'required.sku': 'Sku is required.',
+        'required.sku': 'Артикул обязателен.',
         'alpha_dash.sku':
-          'Sku may have alpha-numeric characters, as well as dashes and underscores only.',
-        'required.name': 'Name is required.',
-        'required.description': 'Description is required.',
+          'Артикул может содержать буквенно-цифровые символы, а также дефисы и подчеркивания.',
+        'required.name': 'Название обязательно.',
+        'required.description': 'Описание обязательно.',
         'max.description':
-          'Description may not be greater than 200 characters.',
-        'required.quantity': 'Quantity is required.',
-        'required.price': 'Price is required.',
-        'required.taxable': 'Taxable is required.',
-        'required.image': 'Please upload files with jpg, jpeg, png format.',
-        'required.brand': 'Brand is required.'
+          'Описание не может быть больше 200 символов.',
+        'required.quantity': 'Количество обязательно.',
+        'required.price': 'Цена обязательна.',
+        'required.taxable': 'Налог обязателен.',
+        'required.image': 'Пожалуйста, загрузите файлы в формате jpg, jpeg, png.',
+        'required.brand': 'Бренд обязателен.'
       });
 
       if (!isValid) {
@@ -336,20 +336,20 @@ export const updateProduct = () => {
       };
 
       const { isValid, errors } = allFieldsValidation(newProduct, rules, {
-        'required.name': 'Name is required.',
-        'required.sku': 'Sku is required.',
+        'required.name': 'Название обязательно.',
+        'required.sku': 'Артикул обязателен.',
         'alpha_dash.sku':
-          'Sku may have alpha-numeric characters, as well as dashes and underscores only.',
-        'required.slug': 'Slug is required.',
+          'Артикул может содержать буквенно-цифровые символы, а также дефисы и подчеркивания.',
+        'required.slug': 'Слаг обязателен.',
         'alpha_dash.slug':
-          'Slug may have alpha-numeric characters, as well as dashes and underscores only.',
-        'required.description': 'Description is required.',
+          'Слаг может содержать буквенно-цифровые символы, а также дефисы и подчеркивания.',
+        'required.description': 'Описание обязательно.',
         'max.description':
-          'Description may not be greater than 200 characters.',
-        'required.quantity': 'Quantity is required.',
-        'required.price': 'Price is required.',
-        'required.taxable': 'Taxable is required.',
-        'required.brand': 'Brand is required.'
+          'Описание не может быть больше 200 символов.',
+        'required.quantity': 'Количество обязательно.',
+        'required.price': 'Цена обязательна.',
+        'required.taxable': 'Налог обязателен.',
+        'required.brand': 'Бренд обязателен.'
       });
 
       if (!isValid) {

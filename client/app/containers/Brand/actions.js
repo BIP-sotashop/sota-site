@@ -130,9 +130,9 @@ export const addBrand = () => {
       const brand = getState().brand.brandFormData;
 
       const { isValid, errors } = allFieldsValidation(brand, rules, {
-        'required.name': 'Name is required.',
-        'required.description': 'Description is required.',
-        'max.description': 'Description may not be greater than 200 characters.'
+        'required.name': 'Название обязательно.',
+        'required.description': 'Описание обязательно.',
+        'max.description': 'Описание не может быть больше 200 символов.'
       });
 
       if (!isValid) {
@@ -182,12 +182,12 @@ export const updateBrand = () => {
       };
 
       const { isValid, errors } = allFieldsValidation(newBrand, rules, {
-        'required.name': 'Name is required.',
-        'required.slug': 'Slug is required.',
+        'required.name': 'Название обязательно.',
+        'required.slug': 'Slug обязателен.',
         'alpha_dash.slug':
-          'Slug may have alpha-numeric characters, as well as dashes and underscores only.',
-        'required.description': 'Description is required.',
-        'max.description': 'Description may not be greater than 200 characters.'
+          'Slug может содержать только буквенно-цифровые символы, дефисы и подчеркивания.',
+        'required.description': 'Описание обязательно.',
+        'max.description': 'Описание не может быть больше 200 символов.'
       });
 
       if (!isValid) {

@@ -34,7 +34,8 @@ export const forgotPassowrd = () => {
       const user = getState().forgotPassword.forgotFormData;
 
       const { isValid, errors } = allFieldsValidation(user, rules, {
-        'required.email': 'Email is required.'
+        'required.email': 'Email обязателен.',
+        'email.email': 'Некорректный email.'
       });
 
       if (!isValid) {
@@ -58,7 +59,7 @@ export const forgotPassowrd = () => {
 
       dispatch({ type: FORGOT_PASSWORD_RESET });
     } catch (error) {
-      const title = `Please try again!`;
+      const title = 'Пожалуйста, попробуйте еще раз!';
       handleError(error, dispatch, title);
     }
   };

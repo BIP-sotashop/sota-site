@@ -52,9 +52,9 @@ const EditProduct = props => {
             <Input
               type={'text'}
               error={formErrors['name']}
-              label={'Name'}
+              label={'Название'}
               name={'name'}
-              placeholder={'Product Name'}
+              placeholder={'Название товара'}
               value={product.name}
               onInputChange={(name, value) => {
                 productChange(name, value);
@@ -78,9 +78,9 @@ const EditProduct = props => {
             <Input
               type={'text'}
               error={formErrors['slug']}
-              label={'Slug'}
+              label={'Арткул'}
               name={'slug'}
-              placeholder={'Product Slug'}
+              placeholder={'Артикул товара'}
               value={product.slug}
               onInputChange={(name, value) => {
                 productChange(name, value);
@@ -104,10 +104,10 @@ const EditProduct = props => {
             <Input
               type={'number'}
               error={formErrors['quantity']}
-              label={'Quantity'}
+              label={'Количество'}
               name={'quantity'}
               decimals={false}
-              placeholder={'Product Quantity'}
+              placeholder={'Количество товара'}
               value={product.quantity}
               onInputChange={(name, value) => {
                 productChange(name, value);
@@ -118,10 +118,10 @@ const EditProduct = props => {
             <Input
               type={'number'}
               error={formErrors['price']}
-              label={'Price'}
+              label={'Цена'}
               name={'price'}
               min={1}
-              placeholder={'Product Price'}
+              placeholder={'Цена товара'}
               value={product.price}
               onInputChange={(name, value) => {
                 productChange(name, value);
@@ -131,7 +131,7 @@ const EditProduct = props => {
           <Col xs='12' md='12'>
             <SelectOption
               error={formErrors['taxable']}
-              label={'Taxable'}
+              label={'НДС'}
               multi={false}
               name={'taxable'}
               value={[product.taxable ? taxableSelect[0] : taxableSelect[1]]}
@@ -145,7 +145,7 @@ const EditProduct = props => {
             <Col xs='12' md='12'>
               <SelectOption
                 error={formErrors['brand']}
-                label={'Select Brand'}
+                label={'Выберите бренд'}
                 multi={false}
                 value={product.brand}
                 options={brands}
@@ -159,7 +159,7 @@ const EditProduct = props => {
             <Switch
               id={`enable-product-${product._id}`}
               name={'isActive'}
-              label={'Active?'}
+              label={'Активный?'}
               checked={product?.isActive}
               toggleCheckboxChange={value => {
                 productChange('isActive', value);
@@ -172,12 +172,12 @@ const EditProduct = props => {
         <div className='d-flex flex-column flex-md-row'>
           <Button
             type='submit'
-            text='Save'
+            text='Сохранить'
             className='mb-3 mb-md-0 mr-0 mr-md-3'
           />
           <Button
             variant='danger'
-            text='Delete'
+            text='Удалить'
             onClick={() => deleteProduct(product._id)}
           />
         </div>

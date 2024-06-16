@@ -36,7 +36,7 @@ class Cart extends React.PureComponent {
             <Button
               borderless
               variant='empty'
-              ariaLabel='close the cart'
+              ariaLabel='закрыть корзину'
               icon={<CloseIcon />}
               onClick={toggleCart}
             />
@@ -53,7 +53,7 @@ class Cart extends React.PureComponent {
         ) : (
           <div className='empty-cart'>
             <BagIcon />
-            <p>Your shopping cart is empty</p>
+            <p>Ваша корзина пуста</p>
           </div>
         )}
         {cartItems.length > 0 && (

@@ -16,19 +16,19 @@ const Checkout = props => {
       <div className='checkout-actions'>
         <Button
           variant='primary'
-          text='Continue shopping'
+          text='Продолжить покупки'
           onClick={() => handleShopping()}
         />
         {authenticated ? (
           <Button
             variant='primary'
-            text='Place Order'
+            text='Оформить заказ'
             onClick={() => placeOrder()}
           />
         ) : (
           <Button
             variant='primary'
-            text='Proceed To Checkout'
+            text='Перейти к оформлению'
             onClick={() => handleCheckout()}
           />
         )}

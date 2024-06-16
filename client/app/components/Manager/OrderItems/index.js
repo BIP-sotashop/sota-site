@@ -44,20 +44,20 @@ const OrderItems = props => {
           className='btn-link text-center py-2 fs-12'
           style={{ minWidth: 120 }}
         >
-          Reivew Product
+          Оставить отзыв
         </Link>
       );
     } else if (item.status !== 'Cancelled') {
       if (!isAdmin) {
         return (
-          <DropdownConfirm label='Cancel'>
+          <DropdownConfirm label='Отменить'>
             <div className='d-flex flex-column align-items-center justify-content-center p-2'>
-              <p className='text-center mb-2'>{`Are you sure you want to cancel ${item.product?.name}.`}</p>
+              <p className='text-center mb-2'>{`Вы уверены, что хотите отменить ${item.product?.name}?`}</p>
               <Button
                 variant='danger'
                 id='CancelOrderItemPopover'
                 size='sm'
-                text='Confirm Cancel'
+                text='Подтвердить отмену'
                 role='menuitem'
                 className='cancel-order-btn'
                 onClick={() => updateOrderItemStatus(item._id, 'Cancelled')}
@@ -80,7 +80,7 @@ const OrderItems = props => {
 
   return (
     <div className='order-items pt-3'>
-      <h2>Order Items</h2>
+      <h2>Элементы заказа</h2>
       <Row>
         {order.products.map((item, index) => (
           <Col xs='12' key={index} className='item'>
@@ -114,20 +114,20 @@ const OrderItems = props => {
                           </div>
                         </>
                       ) : (
-                        <h4>Not Available</h4>
+                        <h4>Недоступно</h4>
                       )}
                     </div>
                     <div className='d-flex justify-content-between flex-wrap d-md-none mt-1'>
                       <p className='mb-1 mr-4'>
-                        Status
+                        Статус
                         <span className='order-label order-status'>{` ${item.status}`}</span>
                       </p>
                       <p className='mb-1 mr-4'>
-                        Quantity
+                        Количество
                         <span className='order-label'>{` ${item.quantity}`}</span>
                       </p>
                       <p>
-                        Total Price
+                        Общая цена
                         <span className='order-label'>{` $${item.totalPrice}`}</span>
                       </p>
                     </div>
@@ -137,18 +137,18 @@ const OrderItems = props => {
                 <div className='d-none d-md-flex justify-content-between align-items-center box'>
                   <div className='text-center'>
                     <p className='order-label order-status'>{`${item.status}`}</p>
-                    <p>Status</p>
+                    <p>Статус</p>
                   </div>
 
                   <div className='text-center'>
                     <p className='order-label'>{` ${item.quantity}`}</p>
-                    <p>Quantity</p>
+                    <p>Количество</p>
                   </div>
 
                   <div className='text-center'>
                     <p className='order-label'>{` $${item.totalPrice}`}</p>
 
-                    <p>Total Price</p>
+                    <p>Общая цена</p>
                   </div>
                 </div>
               </div>

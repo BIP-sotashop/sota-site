@@ -28,9 +28,9 @@ const AddBrand = props => {
             <Input
               type={'text'}
               error={formErrors['name']}
-              label={'Name'}
+              label={'Название'}
               name={'name'}
-              placeholder={'Brand Name'}
+              placeholder={'Название бренда'}
               value={brandFormData.name}
               onInputChange={(name, value) => {
                 brandChange(name, value);
@@ -41,9 +41,9 @@ const AddBrand = props => {
             <Input
               type={'textarea'}
               error={formErrors['description']}
-              label={'Description'}
+              label={'Описание'}
               name={'description'}
-              placeholder={'Brand Description'}
+              placeholder={'Описание бренда'}
               value={brandFormData.description}
               onInputChange={(name, value) => {
                 brandChange(name, value);
@@ -62,7 +62,7 @@ const AddBrand = props => {
         </Row>
         <hr />
         <div className='add-brand-actions'>
-          <Button type='submit' text='Add Brand' />
+          <Button type='submit' text='Добавить бренд' />
         </div>
       </form>
     </div>
